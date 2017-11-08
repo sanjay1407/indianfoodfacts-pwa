@@ -1,0 +1,6 @@
+<mat-form-field class="search-box">
+  <input matInput placeholder="Search food" (keyup.enter)="search()" [(ngModel)]="searchText">
+</mat-form-field>
+
+<food-item *ngFor="let food of foods" [food]="food"></food-item>
+<button mat-fab color="primary" class="add-button">+</button>

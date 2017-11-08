@@ -3,24 +3,34 @@ import {NgModule} from '@angular/core';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatToolbarModule, MatCardModule} from '@angular/material';
+import {MatButtonModule, MatSelectModule, MatInputModule, MatToolbarModule, MatCardModule} from '@angular/material';
+import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {FoodService} from '../services/food.service';
-import { FoodItemComponent } from '../components/food-item/food-item.component';
+import {FoodItemComponent} from '../components/food-item/food-item.component';
+import {AddFoodComponent} from '../components/add-food/add-food.component';
+import {appRoutes} from './app.routes';
+import {SearchFoodComponent} from '../components/search-food/search-food.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FoodItemComponent
+    FoodItemComponent,
+    AddFoodComponent,
+    SearchFoodComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      {}
+    ),
     BrowserModule,
     FormsModule,
     HttpModule,
     JsonpModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatCheckboxModule, MatInputModule, MatToolbarModule, MatCardModule
+    MatButtonModule, MatSelectModule, MatInputModule, MatToolbarModule, MatCardModule
   ],
   providers: [FoodService],
   bootstrap: [AppComponent]

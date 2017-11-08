@@ -1,0 +1,105 @@
+<mat-card>
+  <h2>Add Food</h2>
+  <table>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Food name" [(ngModel)]="food.name">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Quantity" [(ngModel)]="food.quantity">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Unit" [(ngModel)]="food.unit">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Fat (gm)" [(ngModel)]="food.fatInGm">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Carb (gm)" [(ngModel)]="food.carbInGm">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Fiber (gm)" [(ngModel)]="food.fiberInGm">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Net Carbs (gm)" [(ngModel)]="food.netCarbsInGm">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Protein (gm)" [(ngModel)]="food.proteinInGm">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Alcohol (gms)" [(ngModel)]="food.alcoholInGm">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <mat-select placeholder="Type" [(ngModel)]="food.type">
+            <mat-option value="Vegetarian">Vegetarian</mat-option>
+            <mat-option value="Non Vegetarian">Non Vegetarian</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <mat-select placeholder="Category" [(ngModel)]="food.category">
+            <mat-option *ngFor="let c of categories" [value]="c">
+              {{ c }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Calories" [(ngModel)]="food.calories">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Your Full Name" [(ngModel)]="food.author">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <button mat-raised-button color="primary" (click)="addFood()">Save</button>
+  <a mat-button color="primary" href="/">Cancel</a>
+</mat-card>

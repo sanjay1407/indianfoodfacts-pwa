@@ -9,7 +9,7 @@ import {Food} from "../../models/food";
 export class FoodItemComponent implements OnInit {
 
   @Input()
-  public food: Food
+  public food: Food;
 
   constructor() { }
 

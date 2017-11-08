@@ -33,4 +33,11 @@ export class FoodService {
       .map((res) => res.json())
       .catch(this.handleError);
   }
+
+  public addFood(food: Food) {
+    return this.http
+      .post(this.foodApi + '/api/food/', {food: food})
+      .map((res) => res.json())
+      .catch(this.handleError);
+  }
 }
