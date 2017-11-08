@@ -42,7 +42,9 @@ export class AddFoodComponent implements OnInit {
   addFood() {
     this.foodService.addFood(this.food)
       .subscribe(
-        () => this.food = new Food(),
+        () => {
+          alert(this.food.name + ' added successfully! Add more items or click Cancel to go back');
+          this.food = new Food()},
         err => {
           console.log(err);
         });
