@@ -2,3 +2,7 @@
   margin: 20px;
   display: inline-block;
 }
+
+.quantity {
+  width: 120px;
+}

@@ -12,13 +12,15 @@ import {FoodItemComponent} from '../components/food-item/food-item.component';
 import {AddFoodComponent} from '../components/add-food/add-food.component';
 import {appRoutes} from './app.routes';
 import {SearchFoodComponent} from '../components/search-food/search-food.component';
+import { RoundPipe } from '../pipes/round.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FoodItemComponent,
     AddFoodComponent,
-    SearchFoodComponent
+    SearchFoodComponent,
+    RoundPipe
   ],
   imports: [
     RouterModule.forRoot(
