@@ -38,13 +38,5 @@
     <td class="fact-label">Calories</td>
     <td class="fact-value">{{ food.calories }}</td>
   </tr>
-  <tr class="fact-row">
-    <td class="fact-label">Contributed by</td>
-    <td class="fact-value">{{ food.author }}</td>
-  </tr>
-  <tr class="fact-row" [ngStyle]="{'display': (food.restaurant ? 'table-row': 'none')}">
-    <td class="fact-label">Restaurant name</td>
-    <td class="fact-value">{{ food.restaurant }}</td>
-  </tr>
 </table>
 </mat-card>
