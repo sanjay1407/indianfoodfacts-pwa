@@ -4,70 +4,70 @@
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Food name" [(ngModel)]="food.name">
+          <input matInput placeholder="Food name" [(ngModel)]="food.name" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Quantity" [(ngModel)]="food.quantity">
+          <input matInput placeholder="Quantity" type="number" [(ngModel)]="food.quantity" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Unit" [(ngModel)]="food.unit">
+          <input matInput placeholder="Unit" [(ngModel)]="food.unit" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Fat (gm)" [(ngModel)]="food.fatInGm">
+          <input matInput placeholder="Fat (gm)" type="number" [(ngModel)]="food.fatInGm" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Carb (gm)" [(ngModel)]="food.carbInGm">
+          <input matInput placeholder="Carb (gm)" type="number" [(ngModel)]="food.carbInGm" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Fiber (gm)" [(ngModel)]="food.fiberInGm">
+          <input matInput placeholder="Fiber (gm)" type="number" [(ngModel)]="food.fiberInGm" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Net Carbs (gm)" [(ngModel)]="food.netCarbsInGm">
+          <input matInput placeholder="Net Carbs (gm)" type="number" [(ngModel)]="food.netCarbsInGm" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Protein (gm)" [(ngModel)]="food.proteinInGm">
+          <input matInput placeholder="Protein (gm)" type="number" [(ngModel)]="food.proteinInGm" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Alcohol (gms)" [(ngModel)]="food.alcoholInGm">
+          <input matInput placeholder="Alcohol (gms)" type="number" [(ngModel)]="food.alcoholInGm" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <mat-select placeholder="Type" [(ngModel)]="food.type">
+          <mat-select placeholder="Type" [(ngModel)]="food.type" required >
             <mat-option value="Vegetarian">Vegetarian</mat-option>
             <mat-option value="Non Vegetarian">Non Vegetarian</mat-option>
           </mat-select>
@@ -77,7 +77,7 @@
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <mat-select placeholder="Category" [(ngModel)]="food.category">
+          <mat-select placeholder="Category" [(ngModel)]="food.category" required >
             <mat-option *ngFor="let c of categories" [value]="c">
               {{ c }}
             </mat-option>
@@ -88,14 +88,14 @@
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Calories" [(ngModel)]="food.calories">
+          <input matInput placeholder="Calories" type="number" [(ngModel)]="food.calories" required >
         </mat-form-field>
       </td>
     </tr>
     <tr class="fact-row">
       <td class="fact-value">
         <mat-form-field>
-          <input matInput placeholder="Your Full Name" [(ngModel)]="food.author">
+          <input matInput placeholder="Your Full Name" [(ngModel)]="food.author" required >
         </mat-form-field>
       </td>
     </tr>

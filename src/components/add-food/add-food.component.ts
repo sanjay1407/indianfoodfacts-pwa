@@ -40,6 +40,11 @@ export class AddFoodComponent implements OnInit {
   }
 
   addFood() {
+    if(!this.food.isValid()) {
+      alert('All fields are mandatory!');
+      return;
+    }
+
     this.foodService.addFood(this.food)
       .subscribe(
         () => {
