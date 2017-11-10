@@ -1,5 +1,5 @@
-<mat-card>
-  <h2>{{ food.name }}</h2>
+<mat-card class="food-card">
+  <h2 class="title">{{ food.name }}</h2>
   <h3 class="quantity">
     <mat-form-field class="quantity">
       <input matInput placeholder="Quantity (editable)" [ngModel]="food.quantity" (ngModelChange)="onQuantityChange($event)" type="number"><span matSuffix>{{ food.unit }}</span>
