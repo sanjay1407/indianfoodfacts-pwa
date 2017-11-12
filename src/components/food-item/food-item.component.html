@@ -44,6 +44,7 @@
     </tr>
   </table>
   <div class="footer-links">
+    <div class="footer-icon love-not-selected" (click)="toggleLove()" title="Love" [ngClass]="{'love-selected' : this.isMarkedLove, 'love-not-selected' : !this.isMarkedLove }"></div>
     <div class="footer-icon dislike-not-selected" (click)="reportIncorrect()" title="Report incorrect data" [ngClass]="{'dislike-selected' : this.isMarkedIncorrect, 'dislike-not-selected' : !this.isMarkedIncorrect }"></div>
   </div>
 </mat-card>

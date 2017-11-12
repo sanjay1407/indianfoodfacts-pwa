@@ -9,6 +9,7 @@ import { FoodService } from '../../services/food.service';
 })
 export class FoodItemComponent implements OnInit {
   public isMarkedIncorrect: boolean;
+  public isMarkedLove: boolean;
   public changeFactor: number;
 
   @Input()
@@ -27,6 +28,10 @@ export class FoodItemComponent implements OnInit {
     this.food.calories = Number(this.food.calories.toString().replace('-',''));
     this.changeFactor = 1;
     this.isMarkedIncorrect = false;
+    this.isMarkedLove = false;
+
+    let lovedFoods = this.foodService.getLovedFoods();
+    this.isMarkedLove = lovedFoods.indexOf(this.food._id) > -1;
   }
 
   onQuantityChange(newQuantity) {
@@ -44,6 +49,16 @@ export class FoodItemComponent implements OnInit {
             err => {
               console.log(err);
             });
+    }
+  }
+
+  toggleLove() {
+    this.isMarkedLove = !this.isMarkedLove;
+
+    if(this.isMarkedLove) {
+      this.foodService.markFoodAsLoved(this.food);
+    } else {
+      this.foodService.markFoodAsNotLoved(this.food);
     }
   }
 }

@@ -11,6 +11,7 @@ import {Food} from "../models/food";
 export class FoodService {
 
   private foodApi = 'https://indianfoodfacts-api.herokuapp.com';
+  private lovedFoods = [];
 
   constructor(private http: Http) {
   }
@@ -46,5 +47,18 @@ export class FoodService {
       .delete(this.foodApi + '/api/food/' + food._id)
       .map((res) => res.json())
       .catch(this.handleError);
+  }
+
+  public markFoodAsLoved(food: Food) {
+    this.lovedFoods.push(food._id);
+  }
+
+  public markFoodAsNotLoved(food: Food) {
+    let index = this.lovedFoods.indexOf(food._id);
+    this.lovedFoods.splice(index, 1);
+  }
+
+  public getLovedFoods() {
+    return this.lovedFoods;
   }
 }
