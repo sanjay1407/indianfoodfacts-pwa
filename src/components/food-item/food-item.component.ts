@@ -8,6 +8,7 @@ import { FoodService } from '../../services/food.service';
   styleUrls: ['./food-item.component.css']
 })
 export class FoodItemComponent implements OnInit {
+  public isMarkedIncorrect: boolean;
   public changeFactor: number;
 
   @Input()
@@ -25,6 +26,7 @@ export class FoodItemComponent implements OnInit {
     this.food.alcoholInGm = Number(this.food.alcoholInGm.toString().replace('-',''));
     this.food.calories = Number(this.food.calories.toString().replace('-',''));
     this.changeFactor = 1;
+    this.isMarkedIncorrect = false;
   }
 
   onQuantityChange(newQuantity) {
@@ -32,11 +34,16 @@ export class FoodItemComponent implements OnInit {
   }
 
   reportIncorrect() {
-    this.foodService.reportIncorrect(this.food)
-      .subscribe(
-          res => alert('Thanks for your feedback. We will take a look into this food item to remove'),
-          err => {
-            console.log(err);
-          });
+    if(!this.isMarkedIncorrect) {
+      this.foodService.reportIncorrect(this.food)
+        .subscribe(
+            res => {
+              this.isMarkedIncorrect = true;
+              alert('Thanks for your feedback. We will take a look into this food item to remove')
+            },
+            err => {
+              console.log(err);
+            });
+    }
   }
 }
