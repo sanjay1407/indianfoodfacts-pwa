@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Food} from "../../models/food";
+import { FoodService } from '../../services/food.service';
 
 @Component({
   selector: 'food-item',
@@ -12,7 +13,7 @@ export class FoodItemComponent implements OnInit {
   @Input()
   public food: Food;
 
-  constructor() {
+  constructor(private foodService: FoodService) {
   }
 
   ngOnInit() {
@@ -28,5 +29,14 @@ export class FoodItemComponent implements OnInit {
 
   onQuantityChange(newQuantity) {
     this.changeFactor = newQuantity / this.food.quantity;
+  }
+
+  reportIncorrect() {
+    this.foodService.reportIncorrect(this.food)
+      .subscribe(
+          res => alert('Thanks for your feedback. We will take a look into this food item to remove'),
+          err => {
+            console.log(err);
+          });
   }
 }

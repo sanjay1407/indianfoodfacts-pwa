@@ -43,4 +43,7 @@
       <td class="fact-value">{{ food.calories * changeFactor | round }}</td>
     </tr>
   </table>
+  <div class="footer-links">
+    <div class="footer-icon dislike-not-selected" (click)="reportIncorrect()" title="Report incorrect data"></div>
+  </div>
 </mat-card>

@@ -1,5 +1,6 @@
 
 export class Food {
+  public _id: string;
   public name: string;
   public quantity: number;
   public unit: string;

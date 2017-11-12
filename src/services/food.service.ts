@@ -40,4 +40,11 @@ export class FoodService {
       .map((res) => res.json())
       .catch(this.handleError);
   }
+
+  public reportIncorrect(food: Food) {
+    return this.http
+      .delete(this.foodApi + '/api/food/' + food._id)
+      .map((res) => res.json())
+      .catch(this.handleError);
+  }
 }
