@@ -1,0 +1,79 @@
+<mat-card>
+  <h2>Add Recipe</h2>
+  <table>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Recipe name" [(ngModel)]="recipe.name" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Quantity" type="number" [(ngModel)]="recipe.Quantity" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Fat (gm)" type="number" [(ngModel)]="recipe.fatInGm" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Carb (gm)" type="number" [(ngModel)]="recipe.carbInGm" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Protein (gm)" type="number" [(ngModel)]="recipe.proteinInGm" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Duration" type="number" [(ngModel)]="recipe.Duration" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <mat-select placeholder="Category" [(ngModel)]="recipe.Category" required >
+            <mat-option *ngFor="let c of categories" [value]="c">
+              {{ c }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Ingredients" [(ngModel)]="recipe.Ingredients" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <mat-form-field>
+          <input matInput placeholder="Procedure" [(ngModel)]="recipe.Procedure" required >
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr class="fact-row">
+      <td class="fact-value">
+        <input #file type="file" id="files" name="files"  />
+      </td>
+    </tr>
+  </table>
+  <button mat-raised-button color="primary" (click)="addRecipe()">Save</button>
+  <a mat-button color="primary" href="/">Cancel</a>
+</mat-card>

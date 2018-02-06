@@ -10,6 +10,8 @@ import {AppComponent} from './app.component';
 import {FoodService} from '../services/food.service';
 import {FoodItemComponent} from '../components/food-item/food-item.component';
 import {AddFoodComponent} from '../components/add-food/add-food.component';
+import {RecipeService} from '../services/recipe.service';
+import {AddRecipeComponent} from '../components/add-recipe/add-recipe.component';
 import {appRoutes} from './app.routes';
 import {SearchFoodComponent} from '../components/search-food/search-food.component';
 import { RoundPipe } from '../pipes/round.pipe';
@@ -19,6 +21,7 @@ import { RoundPipe } from '../pipes/round.pipe';
     AppComponent,
     FoodItemComponent,
     AddFoodComponent,
+    AddRecipeComponent,
     SearchFoodComponent,
     RoundPipe
   ],
@@ -34,7 +37,7 @@ import { RoundPipe } from '../pipes/round.pipe';
     BrowserAnimationsModule,
     MatButtonModule, MatSelectModule, MatInputModule, MatToolbarModule, MatCardModule
   ],
-  providers: [FoodService],
+  providers: [FoodService,RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
