@@ -15,7 +15,7 @@ We will follow the following workflow to accept contributions for https://github
 * Upstream admin will review and accept the PR to be merged with `upstream`
 * Heroku will auto deploy the changes to [test env](https://indianfoodfacts-test-pwa.herokuapp.com/)
 * Testers will test the feature/bug fix in test env
-* Once the feature is well tested, admin will release the feature to [live site](https://www.indianfoodfacts.com/)
+* Once the feature is well tested, admin will release the feature to [live site](https://www.indianfoodfacts.in/)
 
 
 ## Detailed steps
@@ -85,7 +85,7 @@ In following sections we are going to break down the above steps in detail assum
 ## Deploy to test and production
 * On merge of PR, Heroku will auto deploy changes to the test environment
 * A tester will test the changes in the [test env](https://indianfoodfacts-test-pwa.herokuapp.com/)
-* Once approved by the tester, admin will deploy code to [live site](https://www.indianfoodfacts.com/)
+* Once approved by the tester, admin will deploy code to [live site](https://www.indianfoodfacts.in/)
 * Hurray, you just published your first change to indianfoodfacts.in :)
 
 ## Code Style
